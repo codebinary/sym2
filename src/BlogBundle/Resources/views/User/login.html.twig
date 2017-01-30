@@ -42,6 +42,21 @@
 				</form>
 
 			</div>
+
+
+			<div class="col-xs-6">
+				<h2>Registrate</h2>
+				<hr>
+				<!-- Mostramos el mensaje del flash -->
+				{% for message in app.session.flashbag().get('status') %}
+				    <div class="alert alert-success">
+				    	{{message}}
+				    </div>
+				{% endfor %}
+				{{form_start(form)}}
+				{{form_end(form)}}
+			</div>
+
 		</div>
 
 	</div>
