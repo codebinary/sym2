@@ -47,12 +47,15 @@ class UserController extends Controller
 	   			//Cifrando contraseña
 	   			//Llamamos al servicio
 	   			$factory = $this->get("security.encoder_factory");
+	   			$encoder = $factory->getEncoder($user);
+	   			$password =  $encoder->encodePassword($form->get("password")->getData(), $user->getSalt());
 
-	   			$user->setPassword($form->get("password")->getData());
+	   			$user->setPassword($password);
 	   			$user->setRole("ROLE_USER");
 	   			$user->setImage(null);
- 
-	   			$em = $this->getDoctrine()->getEntityManager();
+ 				
+ 				//
+	   			$em = $this->getDoctrine()->getManager();
 	   			$em->persist($user); 
 
 	   			$flush = $em->flush();
