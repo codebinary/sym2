@@ -1,6 +1,7 @@
 BlogBundle\Entity\Contacto:
     type: entity
     table: contacto
+    repositoryClass: BlogBundle\Repository\EntryRepository
     id:
         id:
             type: integer

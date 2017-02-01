@@ -8,7 +8,15 @@ login_check:
 logout:
     path: /logout
 
+blog_contactos:
+    path:     /contactos/{page}
+    defaults: { _controller: BlogBundle:Contacto:index, page:1 }
+
+blog_delete_contactos:
+    path:     /contactos/delete/{id}
+    defaults: { _controller: BlogBundle:Contacto:delete }
+
 
 blog_homepage:
     path:     /
-    defaults: { _controller: BlogBundle:Default:index }
+    defaults: { _controller: BlogBundle:User:login }

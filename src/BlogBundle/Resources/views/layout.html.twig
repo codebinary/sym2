@@ -9,6 +9,17 @@
 		</title>
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	
+		 <!-- Font Awesome -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	    <!-- Ionicons -->
+	    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	    <!-- Theme style -->
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/AdminLTE.min.css">
+	    <!-- AdminLTE Skins. Choose a skin from the css/skins
+	         folder instead of downloading all of them to reduce the load. -->
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/skins/_all-skins.min.css">
+
 		<!-- Latest compiled and minified CSS & JS -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -53,6 +64,8 @@
 			                        {% if app.user == null %}
 			                        	<li><a href="{{path("login")}}">Entrar</a></li>
 			                        {% else %}
+			                        	<li><a href="{{path("blog_contactos")}}">Lisado de contactos</a></li>
+			                        	<li role="separator" class="divider"></li>
 			                        	<li><a href="{{path("logout")}}">salir</a></li>
 			                        {% endif %}
 			                        	<li role="separator" class="divider"></li>

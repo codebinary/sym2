@@ -27,6 +27,7 @@ class UserController extends Controller
    		$error = $authenticationUtils->getLastAuthenticationError();
    		$last_username = $authenticationUtils->getLastUsername();
 
+
  
    		$user = new User();
 
@@ -71,6 +72,8 @@ class UserController extends Controller
 
 	   		$this->session->getFlashBag()->add("status", $status);
    		}
+
+   		/*return $this->redirectToRoute("blog_contactos");*/
 
    		return $this->render('BlogBundle:User:login.html.twig', array(
    				"error" => $error,

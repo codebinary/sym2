@@ -1,0 +1,77 @@
+{% extends 'BlogBundle::layout.html.twig' %}
+
+{% block content %}
+    
+   <!-- <div class="container"> -->
+     
+     <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Responsive Hover Table</h3>
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tbody><tr>
+                      <!-- <th>ID</th> -->
+                      <th>Nombre</th>
+                      <th>Paterno</th>
+                      <th>Materno</th>
+                      <th>Dni o Extranjería</th>
+                      <th>Email</th>
+                      <th>Distrito</th>
+                      <th>Celular</th>
+                      <th>Modelo</th>
+                      <th>Forma contacto</th>
+                      <th>Comentario</th>
+                      <th>Newsletter</th>
+                      <th>Políticas</th>
+                      <td>Acciones</td>
+                    </tr>
+                    {% for contacto in contactos %}
+                    <tr>
+                      <td>{{contacto.nombre}}</td>
+                      <td>{{contacto.apePaterno}}</td>
+                      <td>{{contacto.apeMaterno}}</td>
+                      <td>{{contacto.dniExtranjeria}}</td>
+                      <td>{{contacto.email}}</td>
+                      <td>{{contacto.distrito}}</td>
+                      <td>{{contacto.celular}}</td>
+                      <td>{{contacto.modelo}}</td>
+                      <td>{{contacto.formaContacto}}</td>
+                      <td>{{contacto.comentario}}</td>
+                      <td>{{contacto.newsletter}}</td>
+                      <td>{{contacto.politicas}}</td>
+                      <td><a href="{{path("blog_delete_contactos", {"id":contacto.id})}}" class="btn btn-danger">Eliminar</a></td>
+
+                     
+                    </tr>
+                    {% endfor %}
+                    
+                  </tbody></table>
+                </div><!-- /.box-body -->
+
+                <div class="box-footer clearfix">
+                  <ul class="pagination pagination-sm no-margin pull-right">
+                    {% for i in 1..pages %}
+                        <li><a href="{{path('blog_homepage', {"page":i})}}">{{i}}</a></li>
+                    {% endfor %}
+                    
+                  </ul>
+                </div>
+
+              </div><!-- /.box -->
+            </div>
+          </div>
+
+   <!-- </div>  -->
+
+{% endblock %}
