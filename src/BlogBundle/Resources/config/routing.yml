@@ -8,6 +8,10 @@ login_check:
 logout:
     path: /logout
 
+blog_dashboard:
+    path:     /dashboard
+    defaults: { _controller: BlogBundle:Default:index }
+
 blog_contactos:
     path:     /contactos/{page}
     defaults: { _controller: BlogBundle:Contacto:index, page:1 }
@@ -15,6 +19,15 @@ blog_contactos:
 blog_delete_contactos:
     path:     /contactos/delete/{id}
     defaults: { _controller: BlogBundle:Contacto:delete }
+
+
+blog_testdrives:
+    path:     /testdrives/{page}
+    defaults: { _controller: BlogBundle:Testdrive:index, page:1 }
+    
+blog_delete_testdrives:
+    path:     /testdrives/delete/{id}
+    defaults: { _controller: BlogBundle:Testdrive:delete }
 
 
 blog_homepage:

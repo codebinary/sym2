@@ -39,7 +39,9 @@ class ContactoController extends Controller
    		return $this->render("BlogBundle:Contacto:index.html.twig", array(
    			"contactos" => $contactos,
    			"totalItems" => $totalItems,
-   			"pages" => $pageCount
+   			"pagesCount" => $pageCount,
+            "page" => $page,
+            "page_m" => $page
    		));
 
    	}
@@ -57,6 +59,9 @@ class ContactoController extends Controller
 
 
    	}
+
+
+      
 
 
 }

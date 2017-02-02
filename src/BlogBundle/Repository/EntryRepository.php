@@ -24,4 +24,22 @@ class EntryRepository extends \Doctrine\ORM\EntityRepository{
 	}
 
 
+	public function getPaginateTest($pageSize = 5, $currentPage = 1){
+
+		//Utilizamos dql
+		$em = $this->getEntityManager();
+
+		$dql = "SELECT t FROM BlogBundle\Entity\Testdrive t ORDER BY t.id DESC";
+
+		$query = $em->createQuery($dql)
+					->setFirstResult($pageSize * ($currentPage - 1))
+					->setMaxResults($pageSize);
+
+		$paginator = new Paginator($query, $fetchJoinCollection = true);
+
+		return $paginator;
+
+	}
+
+
 }

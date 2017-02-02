@@ -28,9 +28,20 @@ security:
             form_login:
                 login_path: /login
                 check_path: /login_check
+                default_target_path: /dashboard
             logout:
                 path: /logout
                 target: /login
+                invalidate_session: false
+                delete_cookies:
+                    a: { path: null, domain: null }
+                    b: { path: null, domain: null }
+
+    access_control:
+        # require ROLE_ADMIN for /admin*
+        - { path: ^/contactos, roles: ROLE_ADMIN }
+            
+
 
             # activate different ways to authenticate
 

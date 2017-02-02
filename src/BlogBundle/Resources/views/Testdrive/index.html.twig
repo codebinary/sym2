@@ -8,11 +8,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Contactos
+            TestDrives
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Contactos</li>
+            <li class="active">testdrives</li>
           </ol>
         </section>
 
@@ -47,21 +47,21 @@
                       <th>Políticas</th>
                       <td>Acciones</td>
                     </tr>
-                    {% for contacto in contactos %}
+                    {% for testdrive in testdrives %}
                     <tr>
-                      <td>{{contacto.nombre}}</td>
-                      <td>{{contacto.apePaterno}}</td>
-                      <td>{{contacto.apeMaterno}}</td>
-                      <td>{{contacto.dniExtranjeria}}</td>
-                      <td>{{contacto.email}}</td>
-                      <td>{{contacto.distrito}}</td>
-                      <td>{{contacto.celular}}</td>
-                      <td>{{contacto.modelo}}</td>
-                      <td>{{contacto.formaContacto}}</td>
-                      <td>{{contacto.comentario }}</td>
-                      <td>{{contacto.newsletter}}</td>
-                      <td>{{contacto.politicas}}</td>
-                      <td><a href="{{path("blog_delete_contactos", {"id":contacto.id})}}" class="btn btn-danger">Eliminar</a></td>
+                      <td>{{testdrive.nombre}}</td>
+                      <td>{{testdrive.apePaterno}}</td>
+                      <td>{{testdrive.apeMaterno}}</td>
+                      <td>{{testdrive.dniExtranjeria}}</td>
+                      <td>{{testdrive.email}}</td>
+                      <td>{{testdrive.distrito}}</td>
+                      <td>{{testdrive.celular}}</td>
+                      <td>{{testdrive.modelo}}</td>
+                      <td>{{testdrive.formaContacto}}</td>
+                      <td>{{testdrive.comentario }}</td>
+                      <td>{{testdrive.newsletter}}</td>
+                      <td>{{testdrive.politicas}}</td>
+                      <td><a href="{{path("blog_delete_testdrives", {"id":testdrive.id})}}" class="btn btn-danger">Eliminar</a></td>
 
                      
                     </tr>
@@ -78,10 +78,10 @@
                       {% set page = page - 1 %}
                     {% endif %}
                     
-                    <li><a href="{{path('blog_contactos', {"page":page})}}">&laquo;</a></li>
+                    <li><a href="{{path('blog_testdrives', {"page":page})}}">&laquo;</a></li>
 
                     {% for i in 1..pagesCount %}
-                        <li><a href="{{path('blog_contactos', {"page":i})}}">{{i}}</a></li>
+                        <li><a href="{{path('blog_testdrives', {"page":i})}}">{{i}}</a></li>
                     {% endfor %}
 
                     
@@ -91,7 +91,7 @@
                       {% set page_m = page_m + 1 %}
                     {% endif %}
 
-                    <li><a href="{{path('blog_contactos', {"page":page_m})}}">&raquo;</a></li>
+                    <li><a href="{{path('blog_testdrives', {"page":page_m})}}">&raquo;</a></li>
                     
                   </ul>
                 </div>

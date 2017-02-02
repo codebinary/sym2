@@ -1,6 +1,7 @@
 BlogBundle\Entity\Testdrive:
     type: entity
     table: testdrive
+    repositoryClass: BlogBundle\Repository\EntryRepository
     id:
         id:
             type: integer
